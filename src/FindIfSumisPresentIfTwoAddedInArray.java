@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by me on 12/11/2016.
@@ -11,10 +8,12 @@ public class FindIfSumisPresentIfTwoAddedInArray {
     public static void main(String[] args){
 
 
+        final  HashMap<Integer, ArrayList<Integer>> ifSumisPresentIfTwoAddedInArray = findIfSumisPresentIfTwoAddedInArray(new int[] {1,3,4,6,10,16,7});
+    printSolution(ifSumisPresentIfTwoAddedInArray);
 
     }
 
-    public static int[][] findIfSumisPresentIfTwoAddedInArray(int[] array){
+    public static  HashMap<Integer, ArrayList<Integer>> findIfSumisPresentIfTwoAddedInArray(int[] array){
 
         HashMap<Integer, Integer> eleMap = new HashMap<>();
 
@@ -33,14 +32,15 @@ public class FindIfSumisPresentIfTwoAddedInArray {
 
             }
         }
-        return null;
+        return solution;
     }
 
     public static void printSolution( HashMap<Integer, ArrayList<Integer>> solution){
         Iterator it = solution.entrySet().iterator();
 
         while(it.hasNext()){
-
+            Map.Entry pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + " = " + pair.getValue());
         }
     }
 }
