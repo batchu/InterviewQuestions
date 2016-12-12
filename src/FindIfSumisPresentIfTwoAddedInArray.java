@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by me on 12/11/2016.
@@ -19,15 +21,26 @@ public class FindIfSumisPresentIfTwoAddedInArray {
         for(int i=0; i<array.length;i++){
             eleMap.put(i,array[i]);
         }
-        HashMap< ArrayList<Integer>, Integer> solution = new HashMap<>();
+        HashMap<Integer, ArrayList<Integer>> solution = new HashMap<>();
 
         for(int i=0;i<array.length;i++){
 
             for(int j=i;j<array.length;j++)
             {
+                if(eleMap.containsValue(array[i]+array[j])){
+                    solution.put(array[i]+array[j], new ArrayList<Integer>(Arrays.asList(array[i], array[j])) );
+                }
 
             }
         }
         return null;
+    }
+
+    public static void printSolution( HashMap<Integer, ArrayList<Integer>> solution){
+        Iterator it = solution.entrySet().iterator();
+
+        while(it.hasNext()){
+
+        }
     }
 }
